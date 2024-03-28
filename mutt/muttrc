@@ -1,0 +1,7 @@
+# vim: filetype=neomuttrc
+source /usr/local/share/mutt-wizard/mutt-wizard.muttrc
+source /home/atariaf/.config/mutt/accounts/kanndide@gmail.com.muttrc
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/atariaf/.config/mutt/accounts/kanndide@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to kanndide@gmail.com"
+
+set editor="nvim"
+
