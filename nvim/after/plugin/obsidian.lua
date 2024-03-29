@@ -5,8 +5,9 @@ require("obsidian").setup({
             path = "/home/atariaf/Documents/External Brain",
         },
     },
+    notes_subdir = "01 Inbox",
 
-    inbox = "01 Inbox",
+    new_notes_location = "notes_subdir",
 
     mappings = {},
 
@@ -51,6 +52,9 @@ require("obsidian").setup({
 
     preferred_link_style = "wiki",
 
+    disable_frontmatter = false,
+
+
     -- Optional, alternatively you can customize the frontmatter data.
     ---@return table
     note_frontmatter_func = function(note)
@@ -59,7 +63,7 @@ require("obsidian").setup({
             note:add_alias(note.title)
         end
 
-        local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+        local out = { id = note.id, aliases = note.aliases, tags = note.tags, references = {} }
 
         -- `note.metadata` contains any manually added fields in the frontmatter.
         -- So here we just make sure those fields are kept in the frontmatter.
