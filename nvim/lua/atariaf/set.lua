@@ -40,4 +40,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
-
+-- Set the conceal option for Obsidian
+vim.opt.conceallevel = 2
