@@ -39,3 +39,5 @@ export EDITOR='nvim'
 # Adding .local/bin to system-wide PATH.
 export PATH="$HOME/.local/bin:$PATH"
 
+setxkbmap -option ctrl:nocaps
+

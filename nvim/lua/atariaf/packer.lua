@@ -48,4 +48,26 @@ return require('packer').startup(function(use)
     -- Snippets
     use('L3MON4D3/LuaSnip')
 
+    -- Obsidian Neovim
+    use({
+        "epwalsh/obsidian.nvim",
+        tag = "*",  -- recommended, use latest release instead of latest commit
+        requires = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+
+        },
+        config = function()
+            require("obsidian").setup({
+                workspaces = {
+                    {
+                        name = "External Brain",
+                        path = "~/Documents/External Brain",
+                    },
+                },
+
+            })
+        end,
+    })
+
 end)
