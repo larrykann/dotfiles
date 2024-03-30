@@ -4,40 +4,51 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Finding files and shit.
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- The theme.
     use({
-        "rose-pine/neovim", 
+        "rose-pine/neovim",
         as = 'rose-pine',
         config = function()
             vim.cmd('colorscheme rose-pine')
         end
     })
 
+    -- Treesitter
     use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
+    -- Harpoon, because why not?
     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
 
+    -- I never have to undo.
     use ('mbbill/undotree')
 
+    -- Git wrapper. Use :Git command
+    -- Same commands as git.
     use('tpope/vim-fugitive')
 
     -- LSP Support
+    -- Using neovim LSP
     use('neovim/nvim-lspconfig')
 
+    -- Mason, the LSP package manager.
     use('williamboman/mason.nvim')
 
+    -- Mason config that helps bridge the gap between nvim-lspconfig and mason.
     use('williamboman/mason-lspconfig.nvim')
 
     -- Autocompletion
