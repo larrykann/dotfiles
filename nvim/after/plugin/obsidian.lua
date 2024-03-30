@@ -46,9 +46,9 @@ require("obsidian").setup({
         return tostring(os.time()) .. "-" .. suffix
     end,
 
-    wiki_link_func = "use_alias_only",
+    wiki_link_func = "prepend_note_id",
 
-    markdown_link_func = "use_alias_only",
+    markdown_link_func = "prepend_note_id",
 
     preferred_link_style = "wiki",
 
