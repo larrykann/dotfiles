@@ -41,3 +41,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 setxkbmap -option ctrl:nocaps
 
+# Adding Libraries folder for Lean development to Python Path.
+export PYTHONPATH="/home/atariaf/Projects/lean/Libraries:$PYTHONPATH"
+
