@@ -13,7 +13,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Aliases
+# >>> Aliases >>>
+
+alias uplib='/home/atariaf/Projects/Scripts/update_libraries.sh'
 
 # Set tmux to use tmux.conf at a different location
 alias tmux='tmux -f /home/atariaf/.config/tmux/tmux.conf'
