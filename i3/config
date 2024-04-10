@@ -46,7 +46,7 @@ exec --no-startup-id google-drive-ocamlfuse ~/google-drive
 exec --no-startup-id ~/Projects/Scripts/sync-mail-neomutt.lua
 
 # Setup secondary display.
-exec_always --no-startup-id ~/scripts/monitor_setup.sh
+exec_always --no-startup-id ~/Projects/Scripts/setup-external-displays.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
