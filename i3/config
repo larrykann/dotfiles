@@ -46,7 +46,7 @@ exec --no-startup-id google-drive-ocamlfuse ~/google-drive
 exec --no-startup-id ~/Projects/Scripts/sync-mail-neomutt.lua
 
 # Setup secondary display.
-exec --no-startup-id xrandr --output HDMI-1-0 --auto --right-of eDP
+exec_always --no-startup-id ~/scripts/monitor_setup.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
