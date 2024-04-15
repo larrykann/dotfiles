@@ -1,7 +1,3 @@
-vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
-vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>') 
-
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
@@ -23,45 +19,32 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end
 })
 
-local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local default_setup = function(server)
-  require('lspconfig')[server].setup({
-    capabilities = lsp_capabilities,
-  })
-end
-
 require('mason').setup({})
 
 require('mason-lspconfig').setup({
-  ensure_installed = {
-    "lua_ls",
-    "pyright",
-    "tsserver",
-},
-handlers = {
-    default_setup,
-    lua_ls = function()
-        require('lspconfig').lua_ls.setup({
-            capabilities = lsp_capabilities,
-            settings = {
-                Lua = {
-                    runtime = {
-                        version = 'LuaJIT'
-                    },
-                    diagnostics = {
-                        globals = {'vim', 'it', 'describe', 'before_each', 'after_each'},
-                    },
-                    workspace = {
-                        library = {
-                            vim.env.VIMRUNTIME,
-                        }
-                    }
-                }
-            }
-        })
-    end,
-},
+    ensure_installed = {
+        "lua_ls",
+        "ruff_lsp",
+        "tsserver",
+    },
+})
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require('lspconfig')
+
+-- Setting up the Lua Language Server
+lspconfig.lua_ls.setup({
+    capabilities = capabilities,
+})
+
+-- Setting up Pyright for Python
+lspconfig.ruff_lsp.setup({
+    capabilities = capabilities,
+})
+
+-- Setting up TypeScript Language Server
+lspconfig.tsserver.setup({
+    capabilities = capabilities,
 })
 
 local cmp = require('cmp')
