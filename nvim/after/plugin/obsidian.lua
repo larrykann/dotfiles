@@ -2,7 +2,7 @@ require("obsidian").setup({
     workspaces = {
         {
             name = "External Brain",
-            path = "/home/atariaf/Documents/External Brain",
+            path = "/home/atariaf/Documents/cyberBrain",
         },
     },
     notes_subdir = "01 Inbox",
