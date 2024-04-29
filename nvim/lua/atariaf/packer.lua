@@ -4,7 +4,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    
+
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -17,10 +17,10 @@ return require('packer').startup(function(use)
 
     -- The theme.
     use({
-        "rose-pine/neovim",
-        as = 'rose-pine',
+        "folke/tokyonight.nvim",
+        as = 'tokyonight',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd('colorscheme tokyonight-night')
         end
     })
 
