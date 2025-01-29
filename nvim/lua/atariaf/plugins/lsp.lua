@@ -26,6 +26,9 @@ return {
           "clangd"
         },
       }
+
+      -- Zig
+      lspconfig.zls.setup {}
     end,
   }
 }
