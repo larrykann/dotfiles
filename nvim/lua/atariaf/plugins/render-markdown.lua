@@ -5,5 +5,18 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+    paragraph = {
+      left_margin = 0.1,
+      min_width = 50,
+    },
+    config = function()
+      require('render-markdown').setup({
+        paragraph = {
+          left_margin = 0.5,
+          min_width = 30,
+        },
+      })
+    end
+
   }
 }
