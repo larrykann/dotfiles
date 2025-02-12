@@ -58,7 +58,7 @@ config.keys = {
   },
 }
 
-for i = 0, 9 do
+for i = 1, 9 do
   -- leader + number to activate that tab
   table.insert(config.keys, {
     key = tostring(i),
