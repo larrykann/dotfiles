@@ -37,7 +37,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_create_autocmd("VimEnter", {
   pattern = "*",
   callback = function()
-    vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
+    vim.cmd [[hi Normal guibg=NONE ctermbg=NONE]]
   end,
 })
 
@@ -51,6 +51,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.wrap = true
   end
 })
-
--- Setup default spaces for Lua
-
