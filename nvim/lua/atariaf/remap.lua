@@ -1,10 +1,11 @@
 -- Plugin specific keymaps can be found in their respective configurations files. ../after/plugin/<plugin name>
 --
 --Back out of directory/file.
--- vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 -- When using oil.nvim, change command to Oil and comment line above.
-vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
+-- vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
+
 -- Keep the cursor in the middle of the screen when scrolling.
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
