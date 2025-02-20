@@ -8,7 +8,7 @@ return {
     opts = {
       paragraph = {
         left_margin = 0.5,
-        min_width = 30,
+        min_width = 80,
       },
     },
   }
