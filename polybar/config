@@ -10,7 +10,7 @@ disabled = #6e6a86
 
 [bar/atariaf]
 width = 100%
-height = 34pt
+height = 14pt
 radius = 0
 
 ; dpi = 96
@@ -31,7 +31,7 @@ module-margin = 1
 separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = "Dank Mono:style=Bold:size=16;3"
+font-0 = "Dank Mono:style=Regular:size=13;3"
 
 modules-left = xworkspaces xwindow
 modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth date
@@ -144,13 +144,13 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-interface = wlp2s0
+interface = wlan0
 label-connected = %{F#F0C674}%ifname%%{F-} %essid% %local_ip%
 
-[module/eth]
-inherit = network-base
-interface-type = wired
-label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
+;[module/eth]
+;inherit = network-base
+;interface-type = wired
+;label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
 
 [module/date]
 type = internal/date
