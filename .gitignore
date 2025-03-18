@@ -1,3 +1,6 @@
 # Neovim stuff
 nvim/lazy-lock.json
 nvim/undodir
+
+# Ignore symlinks
+*/**/*.symlink
