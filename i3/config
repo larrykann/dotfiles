@@ -185,7 +185,7 @@ exec_always --no-startup-id polybar atariaf
 
 # Set wallpapers using feh
 # Wallpaper bank taken from https://github.com/JaKooLit/Wallpaper-Bank
-exec --no-startup-id feh --randomize --bg-fill $HOME/Pictures/wallpapers
+exec --no-startup-id feh --randomize --bg-fill $HOME/wallpapers
 
 # Using picom for transparent background in Wezterm
 exec --no-startup-id picom -b
