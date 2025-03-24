@@ -140,6 +140,11 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Navigate between workspaces
+# This is for keyboard rotary encoder
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Control+Left workspace prev
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -193,7 +198,7 @@ exec --no-startup-id picom -b
 # Setting up external monitor. May need to change the display to correct display.
 # using mirror (same-as) means I don't have to worry about changing primary display.
 # xrandr | grep connected
-exec_always --no-startup-id xrandr --output HDMI-1-0 --auto --same-as eDP
+exec_always --no-startup-id xrandr --output DisplayPort-4 --auto --right-of HDMI-A-4
 
 # Borderless
 default_border none
