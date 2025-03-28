@@ -203,3 +203,6 @@ exec_always --no-startup-id xrandr --output DisplayPort-4 --auto --right-of HDMI
 # Borderless
 default_border none
 default_floating_border none
+
+# flameshot key binding
+bindsym Print exec --no-startup-id flameshot gui --path ~/Pictures/Screenshots
