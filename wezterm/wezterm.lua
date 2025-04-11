@@ -6,6 +6,16 @@ local launcher = require("prog-launcher")
 
 -- Font
 config.font = wezterm.font('Dank Mono')
+config.font_rules = {
+  {
+    italic = false,
+    intensity = "Normal",
+    font = wezterm.font_with_fallback({
+      "Dank Mono",
+      "Symbols Nerd Font Mono",
+    }),
+  },
+}
 config.font_size = 18
 config.line_height = 1
 
