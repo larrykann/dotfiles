@@ -23,7 +23,9 @@ return {
 
       vim.keymap.set("n", "<space>en", function()
         local opts = require('telescope.themes').get_ivy({
-          cwd = vim.fn.stdpath("config")
+          -- cwd = vim.fn.stdpath("config")
+          cwd = "C:/.dotfiles/nvim",
+          hidden = true
         })
         require('telescope.builtin').find_files(opts)
       end)
@@ -32,6 +34,14 @@ return {
         require('telescope.builtin').find_files {
           cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
         }
+      end)
+
+      -- Notes, writing, etc 
+      vim.keymap.set("n", "<space>es", function()
+        local opts = require('telescope.themes').get_ivy({
+          cwd = "~/Documents/scripta"
+        })
+        require('telescope.builtin').find_files(opts)
       end)
 
     end
