@@ -13,6 +13,7 @@ return {
           "lua_ls",
           "pylsp",
           "ruff",
+          "marksman",
         }
       })
       require("mason-tool-installer").setup({
