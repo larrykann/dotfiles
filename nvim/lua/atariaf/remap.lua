@@ -28,3 +28,7 @@ vim.keymap.set("n", "<leader>rw", ":%s/")
 vim.keymap.set("n", "<leader>fm", function()
     vim.lsp.buf.format({ async = true })
 end, { desc = "Format the current buffer" })
+
+-- Create new note
+local notes = require("atariaf.notes")
+vim.keymap.set("n", "<leader>nn", notes.new_note, { desc = "New note" })

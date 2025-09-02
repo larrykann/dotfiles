@@ -17,24 +17,43 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
+      -- cmp
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- buffer-local LSP setup (completion + nav)
+      local on_attach = function(_, bufnr)
+        -- basic LSP keys
+        local map = function(lhs, rhs, desc)
+          vim.keymap.set("n", lhs, rhs, { buffer = bufnr, desc = desc })
+        end
+
+        map("gd", vim.lsp.buf.definition, "Go to definition")
+        map("gr", vim.lsp.buf.references, "Find references")
+        map("K", vim.lsp.buf.hover, "Hover")
+      end
+
+
       -- Lua LSP
-      lspconfig.lua_ls.setup {}
+      lspconfig.lua_ls.setup {
+        capabilities = capabilities,
+      }
 
       -- C LSP
       lspconfig.clangd.setup {
-        cmd = {
-          "clangd"
-        },
+        cmd = { "clangd" },
+        capabilities = capabilities,
       }
 
       -- Zig
-      lspconfig.zls.setup {}
+      lspconfig.zls.setup {
+        capabilities = capabilities,
+      }
 
 
       -- Markdown (Marksman)
       lspconfig.marksman.setup {
-        -- Let Marksman treat your note set as a multi-file workspace.
-        -- It will use the first parent dir containing .git or .marksman.toml as root.
+        on_attach = on_attach,
+        capabilities = capabilities,
         root_dir = lspconfig.util.root_pattern(".git", ".marksman.toml"),
       }
     end,
