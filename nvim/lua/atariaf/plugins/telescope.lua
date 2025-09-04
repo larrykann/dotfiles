@@ -36,7 +36,7 @@ return {
         }
       end)
 
-      -- Notes, writing, etc 
+      -- Notes, writing, etc
       vim.keymap.set("n", "<space>es", function()
         local opts = require('telescope.themes').get_ivy({
           cwd = "~/Documents/scripta"
