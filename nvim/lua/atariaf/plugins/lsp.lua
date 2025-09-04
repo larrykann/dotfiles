@@ -35,20 +35,22 @@ return {
 
       -- Lua LSP
       lspconfig.lua_ls.setup {
+        on_attach = on_attach,
         capabilities = capabilities,
       }
 
       -- C LSP
       lspconfig.clangd.setup {
+        on_attach = on_attach,
         cmd = { "clangd" },
         capabilities = capabilities,
       }
 
       -- Zig
       lspconfig.zls.setup {
+        on_attach = on_attach,
         capabilities = capabilities,
       }
-
 
       -- Markdown (Marksman)
       lspconfig.marksman.setup {

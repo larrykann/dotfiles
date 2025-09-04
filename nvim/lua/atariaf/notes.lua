@@ -43,6 +43,7 @@ function M.new_note()
 
     local fm = {
       "---",
+      "title:" ..title,
       "id: " .. id,
       "date: " .. iso8601(),
       "tags: []",
