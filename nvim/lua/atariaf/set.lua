@@ -44,13 +44,13 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- Set the conceal option for Obsidian
 vim.opt.conceallevel = 2
 
--- Word wrap for markdown files
+-- Markdown soft wrap
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.linebreak = true
-    vim.opt_local.textwidth = 80
-  end
+    vim.opt_local.breakindent = true
+    vim.opt_local.textwidth = 0
+  end,
 })
-
