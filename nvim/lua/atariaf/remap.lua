@@ -32,3 +32,9 @@ end, { desc = "Format the current buffer" })
 -- Create new note
 local notes = require("atariaf.notes")
 vim.keymap.set("n", "<leader>nn", notes.new_note, { desc = "New note" })
+
+-- Create new hgt post
+local hgt = require("atariaf.hgt")
+vim.keymap.set("n", "<leader>np", hgt.new_post, { desc = "New HGT post" })
+
+

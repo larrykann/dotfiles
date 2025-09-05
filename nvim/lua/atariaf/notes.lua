@@ -1,11 +1,8 @@
--- lua/notes.lua
 local M = {}
 
--- Resolve your scripta/notes dir robustly on Windows
 local scripta_root = vim.fs.normalize((vim.env.USERPROFILE or vim.fn.expand("~")) .. "/Documents/scripta")
 local notes_dir    = vim.fs.normalize(scripta_root .. "/notes")
 
--- turn "My Title!!  " -> "my-title"
 local function slugify(s)
   s = s:lower()
   s = s:gsub("[^%w%s%-_]", "")  -- drop punctuation
